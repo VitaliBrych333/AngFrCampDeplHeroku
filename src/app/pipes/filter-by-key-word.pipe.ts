@@ -12,7 +12,11 @@ export class FilterByKeyWordPipe implements PipeTransform {
 
         searchText = searchText.toLowerCase();
 
-        return items.filter(obj =>
-            obj.description.toLowerCase().includes(searchText));
-        }
+        return items.filter(obj => {
+            if (obj.description) {
+                return obj.description.toLowerCase().includes(searchText);
+            }
+            return false;
+        })
+      }
 }
