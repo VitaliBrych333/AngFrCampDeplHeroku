@@ -12,7 +12,7 @@ mongoose.connect(
 
 app.set('port', (process.env.PORT || 5500));
 
-app.use(express.static(path.join(__dirname, '../dist/test')));
+app.use(express.static(path.join(__dirname, '../dist/angfrontcamp')));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 app.use('/', router);
 // app.get('/*', function(req,res) {
-//     res.sendFile(path.join(__dirname, '../dist/test/index.html'));
+//     res.sendFile(path.join(__dirname, '../dist/angfrontcamp/index.html'));
 // });
 
 app.use((err, req, res, next) => {
